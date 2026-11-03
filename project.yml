@@ -1,0 +1,63 @@
+name: Dramareel
+options:
+  bundleIdPrefix: com.dramareel
+  deploymentTarget:
+    iOS: "16.0"
+  xcodeVersion: "16.0"
+  generateEmptyDirectories: true
+
+packages:
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk.git
+    from: 11.0.0
+  GoogleMobileAds:
+    url: https://github.com/googleads/swift-package-manager-google-mobile-ads.git
+    from: 11.0.0
+  OneSignal:
+    url: https://github.com/OneSignal/OneSignal-iOS-SDK.git
+    from: 5.2.0
+
+settings:
+  SWIFT_VERSION: "6.0"
+  IPHONEOS_DEPLOYMENT_TARGET: "16.0"
+  DEVELOPMENT_TEAM: ""
+  ENABLE_USER_SCRIPT_SANDBOXING: "NO"
+
+targets:
+  Dramareel:
+    type: application
+    platform: iOS
+    sources:
+      - path: Dramareel
+    info:
+      path: Dramareel/App/Info.plist
+    entitlements:
+      path: Dramareel/App/Dramareel.entitlements
+    dependencies:
+      - package: Firebase
+        product: FirebaseAuth
+      - package: Firebase
+        product: FirebaseFirestore
+      - package: GoogleMobileAds
+        product: GoogleMobileAds
+      - package: OneSignal
+        product: OneSignalFramework
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.dramareel.app
+      INFOPLIST_FILE: Dramareel/App/Info.plist
+      ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+      SWIFT_STRICT_CONCURRENCY: complete
+      CODE_SIGN_STYLE: Automatic
+      TARGETED_DEVICE_FAMILY: "1,2"
+
+  DramareelTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: DramareelTests
+    dependencies:
+      - target: Dramareel
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.dramareel.app.tests
+      TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Dramareel.app/Dramareel"
+      BUNDLE_LOADER: "$(TEST_HOST)"

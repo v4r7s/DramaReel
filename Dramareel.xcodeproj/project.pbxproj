@@ -1,0 +1,694 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA0100012D1E000100000001 /* DramareelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100012D1E000100000001 /* DramareelApp.swift */; };
+		AA0100022D1E000100000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100022D1E000100000001 /* AppDelegate.swift */; };
+		AA0100032D1E000100000001 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100032D1E000100000001 /* SplashScreenView.swift */; };
+		AA0100042D1E000100000001 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100042D1E000100000001 /* AppConstants.swift */; };
+		AA0100052D1E000100000001 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100052D1E000100000001 /* KeychainManager.swift */; };
+		AA0100062D1E000100000001 /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100062D1E000100000001 /* LocalStorageManager.swift */; };
+		AA0100072D1E000100000001 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100072D1E000100000001 /* Color+Theme.swift */; };
+		AA0100082D1E000100000001 /* View+Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100082D1E000100000001 /* View+Modifiers.swift */; };
+		AA0100092D1E000100000001 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100092D1E000100000001 /* Colors.swift */; };
+		AA0100102D1E000100000001 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100102D1E000100000001 /* Typography.swift */; };
+		AA0100112D1E000100000001 /* DramareelLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100112D1E000100000001 /* DramareelLogoView.swift */; };
+		AA0100122D1E000100000001 /* DramareelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100122D1E000100000001 /* DramareelButton.swift */; };
+		AA0100132D1E000100000001 /* ShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100132D1E000100000001 /* ShimmerView.swift */; };
+		AA0100142D1E000100000001 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100142D1E000100000001 /* SectionHeaderView.swift */; };
+		AA0100152D1E000100000001 /* DramaPosterCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100152D1E000100000001 /* DramaPosterCard.swift */; };
+		AA0100162D1E000100000001 /* StateViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100162D1E000100000001 /* StateViews.swift */; };
+		AA0100172D1E000100000001 /* Drama.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100172D1E000100000001 /* Drama.swift */; };
+		AA0100182D1E000100000001 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100182D1E000100000001 /* Episode.swift */; };
+		AA0100192D1E000100000001 /* SubtitleTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100192D1E000100000001 /* SubtitleTrack.swift */; };
+		AA0100202D1E000100000001 /* ShortItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100202D1E000100000001 /* ShortItem.swift */; };
+		AA0100212D1E000100000001 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100212D1E000100000001 /* UserProfile.swift */; };
+		AA0100222D1E000100000001 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100222D1E000100000001 /* AppSettings.swift */; };
+		AA0100232D1E000100000001 /* CoinPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100232D1E000100000001 /* CoinPack.swift */; };
+		AA0100242D1E000100000001 /* RewardTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100242D1E000100000001 /* RewardTask.swift */; };
+		AA0100252D1E000100000001 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100252D1E000100000001 /* Transaction.swift */; };
+		AA0100262D1E000100000001 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100262D1E000100000001 /* NetworkError.swift */; };
+		AA0100272D1E000100000001 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100272D1E000100000001 /* APIEndpoint.swift */; };
+		AA0100282D1E000100000001 /* HTTPInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100282D1E000100000001 /* HTTPInterceptor.swift */; };
+		AA0100292D1E000100000001 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100292D1E000100000001 /* APIClient.swift */; };
+		AA0100302D1E000100000001 /* AppleSignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100302D1E000100000001 /* AppleSignInCoordinator.swift */; };
+		AA0100312D1E000100000001 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100312D1E000100000001 /* AuthService.swift */; };
+		AA0100322D1E000100000001 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100322D1E000100000001 /* LoginView.swift */; };
+		AA0100332D1E000100000001 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100332D1E000100000001 /* RegisterView.swift */; };
+		AA0100342D1E000100000001 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100342D1E000100000001 /* ForgotPasswordView.swift */; };
+		AA0100352D1E000100000001 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100352D1E000100000001 /* OnboardingView.swift */; };
+		AA0100362D1E000100000001 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100362D1E000100000001 /* HomeViewModel.swift */; };
+		AA0100372D1E000100000001 /* FeaturedHeroSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100372D1E000100000001 /* FeaturedHeroSlider.swift */; };
+		AA0100382D1E000100000001 /* DramaRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100382D1E000100000001 /* DramaRowView.swift */; };
+		AA0100392D1E000100000001 /* GenreFilterBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100392D1E000100000001 /* GenreFilterBar.swift */; };
+		AA0100402D1E000100000001 /* DramaSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100402D1E000100000001 /* DramaSearchView.swift */; };
+		AA0100412D1E000100000001 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100412D1E000100000001 /* HomeView.swift */; };
+		AA0100422D1E000100000001 /* DramaDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100422D1E000100000001 /* DramaDetailViewModel.swift */; };
+		AA0100432D1E000100000001 /* EpisodeGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100432D1E000100000001 /* EpisodeGridView.swift */; };
+		AA0100442D1E000100000001 /* UnlockModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100442D1E000100000001 /* UnlockModalView.swift */; };
+		AA0100452D1E000100000001 /* DramaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100452D1E000100000001 /* DramaDetailView.swift */; };
+		AA0100462D1E000100000001 /* DramareelPlayerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100462D1E000100000001 /* DramareelPlayerEngine.swift */; };
+		AA0100472D1E000100000001 /* VideoPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100472D1E000100000001 /* VideoPlayerViewModel.swift */; };
+		AA0100482D1E000100000001 /* DramareelPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100482D1E000100000001 /* DramareelPlayerView.swift */; };
+		AA0100492D1E000100000001 /* WatermarkOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100492D1E000100000001 /* WatermarkOverlayView.swift */; };
+		AA0100502D1E000100000001 /* SubtitleSelectionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100502D1E000100000001 /* SubtitleSelectionSheet.swift */; };
+		AA0100512D1E000100000001 /* PlayerControlsOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100512D1E000100000001 /* PlayerControlsOverlay.swift */; };
+		AA0100522D1E000100000001 /* VideoPlayerScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100522D1E000100000001 /* VideoPlayerScreenView.swift */; };
+		AA0100532D1E000100000001 /* ShortsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100532D1E000100000001 /* ShortsViewModel.swift */; };
+		AA0100542D1E000100000001 /* ShortReelItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100542D1E000100000001 /* ShortReelItemView.swift */; };
+		AA0100552D1E000100000001 /* ShortsFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100552D1E000100000001 /* ShortsFeedView.swift */; };
+		AA0100562D1E000100000001 /* RewardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100562D1E000100000001 /* RewardsViewModel.swift */; };
+		AA0100572D1E000100000001 /* DailyCheckInCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100572D1E000100000001 /* DailyCheckInCalendarView.swift */; };
+		AA0100582D1E000100000001 /* RewardTaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100582D1E000100000001 /* RewardTaskRowView.swift */; };
+		AA0100592D1E000100000001 /* ReferralCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100592D1E000100000001 /* ReferralCardView.swift */; };
+		AA0100602D1E000100000001 /* RewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100602D1E000100000001 /* RewardsView.swift */; };
+		AA0100612D1E000100000001 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100612D1E000100000001 /* StoreKitManager.swift */; };
+		AA0100622D1E000100000001 /* StoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100622D1E000100000001 /* StoreViewModel.swift */; };
+		AA0100632D1E000100000001 /* CoinPackCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100632D1E000100000001 /* CoinPackCard.swift */; };
+		AA0100642D1E000100000001 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100642D1E000100000001 /* StoreView.swift */; };
+		AA0100652D1E000100000001 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100652D1E000100000001 /* UserAccountViewModel.swift */; };
+		AA0100662D1E000100000001 /* WatchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100662D1E000100000001 /* WatchHistoryView.swift */; };
+		AA0100672D1E000100000001 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100672D1E000100000001 /* FavoritesView.swift */; };
+		AA0100682D1E000100000001 /* TransactionHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100682D1E000100000001 /* TransactionHistoryView.swift */; };
+		AA0100692D1E000100000001 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100692D1E000100000001 /* ProfileView.swift */; };
+		AA0100702D1E000100000001 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100702D1E000100000001 /* MainTabView.swift */; };
+		AA0100712D1E000100000001 /* AdMobRewardedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100712D1E000100000001 /* AdMobRewardedCoordinator.swift */; };
+		AA0100722D1E000100000001 /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100722D1E000100000001 /* AdManager.swift */; };
+		AA0100732D1E000100000001 /* AdMobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100732D1E000100000001 /* AdMobBannerView.swift */; };
+		AA0100742D1E000100000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB0100742D1E000100000001 /* Assets.xcassets */; };
+		AA0100752D1E000100000001 /* app_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BB0100752D1E000100000001 /* app_logo.png */; };
+		AA0100762D1E000100000001 /* bg_login.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BB0100762D1E000100000001 /* bg_login.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BB0100002D1E000100000001 /* Dramareel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dramareel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB0100012D1E000100000001 /* DramareelApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DramareelApp.swift; sourceTree = "<group>"; };
+		BB0100022D1E000100000001 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB0100032D1E000100000001 /* SplashScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		BB0100042D1E000100000001 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		BB0100052D1E000100000001 /* KeychainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		BB0100062D1E000100000001 /* LocalStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
+		BB0100072D1E000100000001 /* Color+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
+		BB0100082D1E000100000001 /* View+Modifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Modifiers.swift"; sourceTree = "<group>"; };
+		BB0100092D1E000100000001 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		BB0100102D1E000100000001 /* Typography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		BB0100112D1E000100000001 /* DramareelLogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DramareelLogoView.swift; sourceTree = "<group>"; };
+		BB0100122D1E000100000001 /* DramareelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DramareelButton.swift; sourceTree = "<group>"; };
+		BB0100132D1E000100000001 /* ShimmerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimmerView.swift; sourceTree = "<group>"; };
+		BB0100142D1E000100000001 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		BB0100152D1E000100000001 /* DramaPosterCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DramaPosterCard.swift; sourceTree = "<group>"; };
+		BB0100162D1E000100000001 /* StateViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateViews.swift; sourceTree = "<group>"; };
+		BB0100172D1E000100000001 /* Drama.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drama.swift; sourceTree = "<group>"; };
+		BB0100182D1E000100000001 /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		BB0100192D1E000100000001 /* SubtitleTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtitleTrack.swift; sourceTree = "<group>"; };
+		BB0100202D1E000100000001 /* ShortItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortItem.swift; sourceTree = "<group>"; };
+		BB0100212D1E000100000001 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		BB0100222D1E000100000001 /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		BB0100232D1E000100000001 /* CoinPack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinPack.swift; sourceTree = "<group>"; };
+		BB0100242D1E000100000001 /* RewardTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardTask.swift; sourceTree = "<group>"; };
+		BB0100252D1E000100000001 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		BB0100262D1E000100000001 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		BB0100272D1E000100000001 /* APIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		BB0100282D1E000100000001 /* HTTPInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPInterceptor.swift; sourceTree = "<group>"; };
+		BB0100292D1E000100000001 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		BB0100302D1E000100000001 /* AppleSignInCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleSignInCoordinator.swift; sourceTree = "<group>"; };
+		BB0100312D1E000100000001 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		BB0100322D1E000100000001 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		BB0100332D1E000100000001 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		BB0100342D1E000100000001 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		BB0100352D1E000100000001 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		BB0100362D1E000100000001 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BB0100372D1E000100000001 /* FeaturedHeroSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedHeroSlider.swift; sourceTree = "<group>"; };
+		BB0100382D1E000100000001 /* DramaRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DramaRowView.swift; sourceTree = "<group>"; };
+		BB0100392D1E000100000001 /* GenreFilterBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreFilterBar.swift; sourceTree = "<group>"; };
+		BB0100402D1E000100000001 /* DramaSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DramaSearchView.swift; sourceTree = "<group>"; };
+		BB0100412D1E000100000001 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BB0100422D1E000100000001 /* DramaDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DramaDetailViewModel.swift; sourceTree = "<group>"; };
+		BB0100432D1E000100000001 /* EpisodeGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeGridView.swift; sourceTree = "<group>"; };
+		BB0100442D1E000100000001 /* UnlockModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockModalView.swift; sourceTree = "<group>"; };
+		BB0100452D1E000100000001 /* DramaDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DramaDetailView.swift; sourceTree = "<group>"; };
+		BB0100462D1E000100000001 /* DramareelPlayerEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DramareelPlayerEngine.swift; sourceTree = "<group>"; };
+		BB0100472D1E000100000001 /* VideoPlayerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewModel.swift; sourceTree = "<group>"; };
+		BB0100482D1E000100000001 /* DramareelPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DramareelPlayerView.swift; sourceTree = "<group>"; };
+		BB0100492D1E000100000001 /* WatermarkOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatermarkOverlayView.swift; sourceTree = "<group>"; };
+		BB0100502D1E000100000001 /* SubtitleSelectionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtitleSelectionSheet.swift; sourceTree = "<group>"; };
+		BB0100512D1E000100000001 /* PlayerControlsOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerControlsOverlay.swift; sourceTree = "<group>"; };
+		BB0100522D1E000100000001 /* VideoPlayerScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerScreenView.swift; sourceTree = "<group>"; };
+		BB0100532D1E000100000001 /* ShortsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortsViewModel.swift; sourceTree = "<group>"; };
+		BB0100542D1E000100000001 /* ShortReelItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortReelItemView.swift; sourceTree = "<group>"; };
+		BB0100552D1E000100000001 /* ShortsFeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortsFeedView.swift; sourceTree = "<group>"; };
+		BB0100562D1E000100000001 /* RewardsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsViewModel.swift; sourceTree = "<group>"; };
+		BB0100572D1E000100000001 /* DailyCheckInCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyCheckInCalendarView.swift; sourceTree = "<group>"; };
+		BB0100582D1E000100000001 /* RewardTaskRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardTaskRowView.swift; sourceTree = "<group>"; };
+		BB0100592D1E000100000001 /* ReferralCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferralCardView.swift; sourceTree = "<group>"; };
+		BB0100602D1E000100000001 /* RewardsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsView.swift; sourceTree = "<group>"; };
+		BB0100612D1E000100000001 /* StoreKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
+		BB0100622D1E000100000001 /* StoreViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreViewModel.swift; sourceTree = "<group>"; };
+		BB0100632D1E000100000001 /* CoinPackCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinPackCard.swift; sourceTree = "<group>"; };
+		BB0100642D1E000100000001 /* StoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		BB0100652D1E000100000001 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
+		BB0100662D1E000100000001 /* WatchHistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchHistoryView.swift; sourceTree = "<group>"; };
+		BB0100672D1E000100000001 /* FavoritesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		BB0100682D1E000100000001 /* TransactionHistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionHistoryView.swift; sourceTree = "<group>"; };
+		BB0100692D1E000100000001 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		BB0100702D1E000100000001 /* MainTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		BB0100712D1E000100000001 /* AdMobRewardedCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobRewardedCoordinator.swift; sourceTree = "<group>"; };
+		BB0100722D1E000100000001 /* AdManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
+		BB0100732D1E000100000001 /* AdMobBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobBannerView.swift; sourceTree = "<group>"; };
+		BB0100742D1E000100000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB0100752D1E000100000001 /* app_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_logo.png; sourceTree = "<group>"; };
+		BB0100762D1E000100000001 /* bg_login.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_login.jpg; sourceTree = "<group>"; };
+		BB0100772D1E000100000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB0100782D1E000100000001 /* Dramareel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dramareel.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CC0100012D1E000100000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DD0100012D1E000100000001 = {
+			isa = PBXGroup;
+			children = (
+				DD0100022D1E000100000001 /* Dramareel */,
+				DD0100032D1E000100000001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DD0100022D1E000100000001 /* Dramareel */ = {
+			isa = PBXGroup;
+			children = (
+				DD0100042D1E000100000001 /* App */,
+				DD0100052D1E000100000001 /* Core */,
+				DD0100062D1E000100000001 /* DesignSystem */,
+				DD0100072D1E000100000001 /* Models */,
+				DD0100082D1E000100000001 /* Networking */,
+				DD0100092D1E000100000001 /* Authentication */,
+				DD0100102D1E000100000001 /* Features */,
+				DD0100112D1E000100000001 /* Advertising */,
+				DD0100122D1E000100000001 /* Resources */,
+			);
+			path = Dramareel;
+			sourceTree = "<group>";
+		};
+		DD0100032D1E000100000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB0100002D1E000100000001 /* Dramareel.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD0100042D1E000100000001 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BB0100012D1E000100000001 /* DramareelApp.swift */,
+				BB0100022D1E000100000001 /* AppDelegate.swift */,
+				BB0100032D1E000100000001 /* SplashScreenView.swift */,
+				BB0100772D1E000100000001 /* Info.plist */,
+				BB0100782D1E000100000001 /* Dramareel.entitlements */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DD0100052D1E000100000001 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BB0100042D1E000100000001 /* AppConstants.swift */,
+				BB0100052D1E000100000001 /* KeychainManager.swift */,
+				BB0100062D1E000100000001 /* LocalStorageManager.swift */,
+				BB0100072D1E000100000001 /* Color+Theme.swift */,
+				BB0100082D1E000100000001 /* View+Modifiers.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DD0100062D1E000100000001 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				BB0100092D1E000100000001 /* Colors.swift */,
+				BB0100102D1E000100000001 /* Typography.swift */,
+				BB0100112D1E000100000001 /* DramareelLogoView.swift */,
+				BB0100122D1E000100000001 /* DramareelButton.swift */,
+				BB0100132D1E000100000001 /* ShimmerView.swift */,
+				BB0100142D1E000100000001 /* SectionHeaderView.swift */,
+				BB0100152D1E000100000001 /* DramaPosterCard.swift */,
+				BB0100162D1E000100000001 /* StateViews.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		DD0100072D1E000100000001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB0100172D1E000100000001 /* Drama.swift */,
+				BB0100182D1E000100000001 /* Episode.swift */,
+				BB0100192D1E000100000001 /* SubtitleTrack.swift */,
+				BB0100202D1E000100000001 /* ShortItem.swift */,
+				BB0100212D1E000100000001 /* UserProfile.swift */,
+				BB0100222D1E000100000001 /* AppSettings.swift */,
+				BB0100232D1E000100000001 /* CoinPack.swift */,
+				BB0100242D1E000100000001 /* RewardTask.swift */,
+				BB0100252D1E000100000001 /* Transaction.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DD0100082D1E000100000001 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BB0100262D1E000100000001 /* NetworkError.swift */,
+				BB0100272D1E000100000001 /* APIEndpoint.swift */,
+				BB0100282D1E000100000001 /* HTTPInterceptor.swift */,
+				BB0100292D1E000100000001 /* APIClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		DD0100092D1E000100000001 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				BB0100302D1E000100000001 /* AppleSignInCoordinator.swift */,
+				BB0100312D1E000100000001 /* AuthService.swift */,
+				BB0100322D1E000100000001 /* LoginView.swift */,
+				BB0100332D1E000100000001 /* RegisterView.swift */,
+				BB0100342D1E000100000001 /* ForgotPasswordView.swift */,
+				BB0100352D1E000100000001 /* OnboardingView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		DD0100102D1E000100000001 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				BB0100702D1E000100000001 /* MainTabView.swift */,
+				BB0100362D1E000100000001 /* HomeViewModel.swift */,
+				BB0100372D1E000100000001 /* FeaturedHeroSlider.swift */,
+				BB0100382D1E000100000001 /* DramaRowView.swift */,
+				BB0100392D1E000100000001 /* GenreFilterBar.swift */,
+				BB0100402D1E000100000001 /* DramaSearchView.swift */,
+				BB0100412D1E000100000001 /* HomeView.swift */,
+				BB0100422D1E000100000001 /* DramaDetailViewModel.swift */,
+				BB0100432D1E000100000001 /* EpisodeGridView.swift */,
+				BB0100442D1E000100000001 /* UnlockModalView.swift */,
+				BB0100452D1E000100000001 /* DramaDetailView.swift */,
+				BB0100462D1E000100000001 /* DramareelPlayerEngine.swift */,
+				BB0100472D1E000100000001 /* VideoPlayerViewModel.swift */,
+				BB0100482D1E000100000001 /* DramareelPlayerView.swift */,
+				BB0100492D1E000100000001 /* WatermarkOverlayView.swift */,
+				BB0100502D1E000100000001 /* SubtitleSelectionSheet.swift */,
+				BB0100512D1E000100000001 /* PlayerControlsOverlay.swift */,
+				BB0100522D1E000100000001 /* VideoPlayerScreenView.swift */,
+				BB0100532D1E000100000001 /* ShortsViewModel.swift */,
+				BB0100542D1E000100000001 /* ShortReelItemView.swift */,
+				BB0100552D1E000100000001 /* ShortsFeedView.swift */,
+				BB0100562D1E000100000001 /* RewardsViewModel.swift */,
+				BB0100572D1E000100000001 /* DailyCheckInCalendarView.swift */,
+				BB0100582D1E000100000001 /* RewardTaskRowView.swift */,
+				BB0100592D1E000100000001 /* ReferralCardView.swift */,
+				BB0100602D1E000100000001 /* RewardsView.swift */,
+				BB0100612D1E000100000001 /* StoreKitManager.swift */,
+				BB0100622D1E000100000001 /* StoreViewModel.swift */,
+				BB0100632D1E000100000001 /* CoinPackCard.swift */,
+				BB0100642D1E000100000001 /* StoreView.swift */,
+				BB0100652D1E000100000001 /* UserAccountViewModel.swift */,
+				BB0100662D1E000100000001 /* WatchHistoryView.swift */,
+				BB0100672D1E000100000001 /* FavoritesView.swift */,
+				BB0100682D1E000100000001 /* TransactionHistoryView.swift */,
+				BB0100692D1E000100000001 /* ProfileView.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		DD0100112D1E000100000001 /* Advertising */ = {
+			isa = PBXGroup;
+			children = (
+				BB0100712D1E000100000001 /* AdMobRewardedCoordinator.swift */,
+				BB0100722D1E000100000001 /* AdManager.swift */,
+				BB0100732D1E000100000001 /* AdMobBannerView.swift */,
+			);
+			path = Advertising;
+			sourceTree = "<group>";
+		};
+		DD0100122D1E000100000001 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BB0100742D1E000100000001 /* Assets.xcassets */,
+				BB0100752D1E000100000001 /* app_logo.png */,
+				BB0100762D1E000100000001 /* bg_login.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE0100012D1E000100000001 /* Dramareel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF0100012D1E000100000001 /* Build configuration list for PBXNativeTarget "Dramareel" */;
+			buildPhases = (
+				CC0100012D1E000100000001 /* Frameworks */,
+				CC0100022D1E000100000001 /* Sources */,
+				CC0100032D1E000100000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dramareel;
+			productName = Dramareel;
+			productReference = BB0100002D1E000100000001 /* Dramareel.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					EE0100012D1E000100000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = FF0100022D1E000100000001 /* Build configuration list for PBXProject "Dramareel" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DD0100012D1E000100000001;
+			productRefGroup = DD0100032D1E000100000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE0100012D1E000100000001 /* Dramareel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC0100032D1E000100000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0100742D1E000100000001 /* Assets.xcassets in Resources */,
+				AA0100752D1E000100000001 /* app_logo.png in Resources */,
+				AA0100762D1E000100000001 /* bg_login.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CC0100022D1E000100000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0100012D1E000100000001 /* DramareelApp.swift in Sources */,
+				AA0100022D1E000100000001 /* AppDelegate.swift in Sources */,
+				AA0100032D1E000100000001 /* SplashScreenView.swift in Sources */,
+				AA0100042D1E000100000001 /* AppConstants.swift in Sources */,
+				AA0100052D1E000100000001 /* KeychainManager.swift in Sources */,
+				AA0100062D1E000100000001 /* LocalStorageManager.swift in Sources */,
+				AA0100072D1E000100000001 /* Color+Theme.swift in Sources */,
+				AA0100082D1E000100000001 /* View+Modifiers.swift in Sources */,
+				AA0100092D1E000100000001 /* Colors.swift in Sources */,
+				AA0100102D1E000100000001 /* Typography.swift in Sources */,
+				AA0100112D1E000100000001 /* DramareelLogoView.swift in Sources */,
+				AA0100122D1E000100000001 /* DramareelButton.swift in Sources */,
+				AA0100132D1E000100000001 /* ShimmerView.swift in Sources */,
+				AA0100142D1E000100000001 /* SectionHeaderView.swift in Sources */,
+				AA0100152D1E000100000001 /* DramaPosterCard.swift in Sources */,
+				AA0100162D1E000100000001 /* StateViews.swift in Sources */,
+				AA0100172D1E000100000001 /* Drama.swift in Sources */,
+				AA0100182D1E000100000001 /* Episode.swift in Sources */,
+				AA0100192D1E000100000001 /* SubtitleTrack.swift in Sources */,
+				AA0100202D1E000100000001 /* ShortItem.swift in Sources */,
+				AA0100212D1E000100000001 /* UserProfile.swift in Sources */,
+				AA0100222D1E000100000001 /* AppSettings.swift in Sources */,
+				AA0100232D1E000100000001 /* CoinPack.swift in Sources */,
+				AA0100242D1E000100000001 /* RewardTask.swift in Sources */,
+				AA0100252D1E000100000001 /* Transaction.swift in Sources */,
+				AA0100262D1E000100000001 /* NetworkError.swift in Sources */,
+				AA0100272D1E000100000001 /* APIEndpoint.swift in Sources */,
+				AA0100282D1E000100000001 /* HTTPInterceptor.swift in Sources */,
+				AA0100292D1E000100000001 /* APIClient.swift in Sources */,
+				AA0100302D1E000100000001 /* AppleSignInCoordinator.swift in Sources */,
+				AA0100312D1E000100000001 /* AuthService.swift in Sources */,
+				AA0100322D1E000100000001 /* LoginView.swift in Sources */,
+				AA0100332D1E000100000001 /* RegisterView.swift in Sources */,
+				AA0100342D1E000100000001 /* ForgotPasswordView.swift in Sources */,
+				AA0100352D1E000100000001 /* OnboardingView.swift in Sources */,
+				AA0100362D1E000100000001 /* HomeViewModel.swift in Sources */,
+				AA0100372D1E000100000001 /* FeaturedHeroSlider.swift in Sources */,
+				AA0100382D1E000100000001 /* DramaRowView.swift in Sources */,
+				AA0100392D1E000100000001 /* GenreFilterBar.swift in Sources */,
+				AA0100402D1E000100000001 /* DramaSearchView.swift in Sources */,
+				AA0100412D1E000100000001 /* HomeView.swift in Sources */,
+				AA0100422D1E000100000001 /* DramaDetailViewModel.swift in Sources */,
+				AA0100432D1E000100000001 /* EpisodeGridView.swift in Sources */,
+				AA0100442D1E000100000001 /* UnlockModalView.swift in Sources */,
+				AA0100452D1E000100000001 /* DramaDetailView.swift in Sources */,
+				AA0100462D1E000100000001 /* DramareelPlayerEngine.swift in Sources */,
+				AA0100472D1E000100000001 /* VideoPlayerViewModel.swift in Sources */,
+				AA0100482D1E000100000001 /* DramareelPlayerView.swift in Sources */,
+				AA0100492D1E000100000001 /* WatermarkOverlayView.swift in Sources */,
+				AA0100502D1E000100000001 /* SubtitleSelectionSheet.swift in Sources */,
+				AA0100512D1E000100000001 /* PlayerControlsOverlay.swift in Sources */,
+				AA0100522D1E000100000001 /* VideoPlayerScreenView.swift in Sources */,
+				AA0100532D1E000100000001 /* ShortsViewModel.swift in Sources */,
+				AA0100542D1E000100000001 /* ShortReelItemView.swift in Sources */,
+				AA0100552D1E000100000001 /* ShortsFeedView.swift in Sources */,
+				AA0100562D1E000100000001 /* RewardsViewModel.swift in Sources */,
+				AA0100572D1E000100000001 /* DailyCheckInCalendarView.swift in Sources */,
+				AA0100582D1E000100000001 /* RewardTaskRowView.swift in Sources */,
+				AA0100592D1E000100000001 /* ReferralCardView.swift in Sources */,
+				AA0100602D1E000100000001 /* RewardsView.swift in Sources */,
+				AA0100612D1E000100000001 /* StoreKitManager.swift in Sources */,
+				AA0100622D1E000100000001 /* StoreViewModel.swift in Sources */,
+				AA0100632D1E000100000001 /* CoinPackCard.swift in Sources */,
+				AA0100642D1E000100000001 /* StoreView.swift in Sources */,
+				AA0100652D1E000100000001 /* UserAccountViewModel.swift in Sources */,
+				AA0100662D1E000100000001 /* WatchHistoryView.swift in Sources */,
+				AA0100672D1E000100000001 /* FavoritesView.swift in Sources */,
+				AA0100682D1E000100000001 /* TransactionHistoryView.swift in Sources */,
+				AA0100692D1E000100000001 /* ProfileView.swift in Sources */,
+				AA0100702D1E000100000001 /* MainTabView.swift in Sources */,
+				AA0100712D1E000100000001 /* AdMobRewardedCoordinator.swift in Sources */,
+				AA0100722D1E000100000001 /* AdManager.swift in Sources */,
+				AA0100732D1E000100000001 /* AdMobBannerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FF0100032D1E000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Dramareel/App/Dramareel.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Dramareel/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Dramareel;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dramareel.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF0100042D1E000100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Dramareel/App/Dramareel.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Dramareel/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Dramareel;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dramareel.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FF0100052D1E000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDEFINED_VARIABLES = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FF0100062D1E000100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDEFINED_VARIABLES = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF0100012D1E000100000001 /* Build configuration list for PBXNativeTarget "Dramareel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF0100032D1E000100000001 /* Debug */,
+				FF0100042D1E000100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF0100022D1E000100000001 /* Build configuration list for PBXProject "Dramareel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF0100052D1E000100000001 /* Debug */,
+				FF0100062D1E000100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

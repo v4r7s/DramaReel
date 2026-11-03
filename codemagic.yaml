@@ -1,0 +1,100 @@
+workflows:
+  ios-build-test:
+    name: Dramareel iOS - Build & Unit Tests
+    max_build_duration: 30
+    instance_type: mac_mini_m2
+    environment:
+      xcode: 16.0
+      vars:
+        XCODE_PROJECT: "Dramareel.xcodeproj"
+        XCODE_SCHEME: "Dramareel"
+    triggering:
+      events:
+        - push
+        - pull_request
+      branch_patterns:
+        - pattern: 'main'
+          include: true
+          source: true
+        - pattern: 'develop'
+          include: true
+          source: true
+    scripts:
+      - name: Install Tools
+        script: |
+          brew install xcodegen
+      - name: Generate Xcode Project
+        script: |
+          xcodegen generate
+      - name: Resolve Swift Packages
+        script: |
+          xcodebuild -resolvePackageDependencies -project Dramareel.xcodeproj
+      - name: Run Unit Tests
+        script: |
+          xcodebuild test \
+            -project Dramareel.xcodeproj \
+            -scheme Dramareel \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
+            -enableCodeCoverage YES \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_ENTITLEMENTS="" \
+            CODE_SIGNING_ALLOWED=NO
+    artifacts:
+      - /Users/builder/Library/Developer/Xcode/DerivedData/**/Logs/Test/*.xcresult
+
+  ios-release-testflight:
+    name: Dramareel iOS - Release to TestFlight
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    environment:
+      xcode: 16.0
+      groups:
+        - app_store_credentials # Set APP_STORE_CONNECT_KEY_IDENTIFIER, APP_STORE_CONNECT_ISSUER_ID, APP_STORE_CONNECT_PRIVATE_KEY
+        - apple_signing_certs  # Set CERTIFICATE_PRIVATE_KEY
+      vars:
+        XCODE_PROJECT: "Dramareel.xcodeproj"
+        XCODE_SCHEME: "Dramareel"
+        BUNDLE_ID: "com.dramareel.app"
+    triggering:
+      events:
+        - tag
+      branch_patterns:
+        - pattern: 'v*'
+          include: true
+    scripts:
+      - name: Set up code signing settings on Codemagic
+        script: |
+          keychain initialize
+          app-store-connect fetch-signing-files "$BUNDLE_ID" \
+            --type IOS_APP_STORE \
+            --create
+          keychain add-certificates
+          xcode-project use-profiles
+      - name: Install Tools and Generate Project
+        script: |
+          brew install xcodegen
+          xcodegen generate
+      - name: Resolve Swift Packages
+        script: |
+          xcodebuild -resolvePackageDependencies -project Dramareel.xcodeproj
+      - name: Build IPA for App Store
+        script: |
+          xcode-project build-ipa \
+            --project Dramareel.xcodeproj \
+            --scheme "$XCODE_SCHEME"
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - "*.dSYM.zip"
+    publishing:
+      email:
+        recipients:
+          - devops@dramareel.app
+        notify:
+          failure: true
+          success: true
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true
+        expire_build_submitted_for_review: true
