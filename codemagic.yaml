@@ -59,10 +59,17 @@ workflows:
     triggering:
       events:
         - tag
+        - push
       branch_patterns:
+        - pattern: 'main'
+          include: true
         - pattern: 'v*'
           include: true
     scripts:
+      - name: Install Tools and Generate Project
+        script: |
+          brew install xcodegen
+          xcodegen generate
       - name: Set up code signing settings on Codemagic
         script: |
           keychain initialize
@@ -70,11 +77,7 @@ workflows:
             --type IOS_APP_STORE \
             --create
           keychain add-certificates
-          xcode-project use-profiles
-      - name: Install Tools and Generate Project
-        script: |
-          brew install xcodegen
-          xcodegen generate
+          xcode-project use-profiles --project Dramareel.xcodeproj
       - name: Resolve Swift Packages
         script: |
           xcodebuild -resolvePackageDependencies -project Dramareel.xcodeproj
