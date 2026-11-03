@@ -1,5 +1,6 @@
 import SwiftUI
 import AVFoundation
+import AVKit
 
 public struct DramareelPlayerView: UIViewControllerRepresentable {
     public let player: AVPlayer?

@@ -8,10 +8,17 @@ public final class APIClient: @unchecked Sendable {
     
     public var baseURL: String {
         get {
+            var raw = AppConstants.defaultBaseURL
             if let custom = UserDefaults.standard.string(forKey: AppConstants.StorageKeys.customApiBaseURL), !custom.isEmpty {
-                return custom.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+                raw = custom
             }
-            return AppConstants.defaultBaseURL
+            raw = raw.trimmingCharacters(in: CharacterSet(charactersIn: "/ "))
+            if raw.hasSuffix("/api/mobile/v1") {
+                raw = String(raw.dropLast("/api/mobile/v1".count))
+            } else if raw.hasSuffix("/api") {
+                raw = String(raw.dropLast("/api".count))
+            }
+            return raw.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
         }
         set {
             UserDefaults.standard.set(newValue, forKey: AppConstants.StorageKeys.customApiBaseURL)

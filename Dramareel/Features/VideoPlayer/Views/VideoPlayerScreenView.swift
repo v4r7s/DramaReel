@@ -95,7 +95,7 @@ public struct VideoPlayerScreenView: View {
         }
         .onDisappear {
             viewModel.saveCurrentProgress()
-            viewModel.playerEngine.cleanup()
+            viewModel.cleanup()
         }
     }
     

@@ -8,12 +8,12 @@ public enum AppConstants {
     public static let appScheme = "dramareel://"
     public static let legacyAppScheme = "snapreels://"
     
-    // MARK: - API Configuration
+    // MARK: - API Configuration (Shared across Android APK & iOS IPA)
     // Note: Can be overridden at runtime via AppEnvironment or Settings
-    public static let defaultBaseURL = "https://YOUR_DOMAIN_HERE.com"
+    public static let defaultBaseURL = "https://dramareel.org"
     public static let mobileApiPrefix = "/api/mobile/v1"
     public static let userApiPrefix = "/api/user"
-    public static let defaultApiKey = "YOUR_API_KEY_HERE"
+    public static let defaultApiKey = "secret_0f5"
     
     // MARK: - AdMob Test Unit IDs (Official Google AdMob iOS Test IDs)
     public enum AdMobTestIDs {

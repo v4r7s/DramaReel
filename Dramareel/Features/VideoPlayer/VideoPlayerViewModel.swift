@@ -173,8 +173,16 @@ public final class VideoPlayerViewModel: ObservableObject {
         }
     }
     
-    deinit {
+    // MARK: - Lifecycle Cleanup
+    public func cleanup() {
         controlsTimer?.invalidate()
+        controlsTimer = nil
+        progressSyncTask?.cancel()
+        progressSyncTask = nil
+        playerEngine.cleanup()
+    }
+    
+    deinit {
         progressSyncTask?.cancel()
     }
 }
