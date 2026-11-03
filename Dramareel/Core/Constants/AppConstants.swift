@@ -13,7 +13,7 @@ public enum AppConstants {
     public static let defaultBaseURL = "https://dramareel.org"
     public static let mobileApiPrefix = "/api/mobile/v1"
     public static let userApiPrefix = "/api/user"
-    public static let defaultApiKey = "secret_0f5"
+    public static let defaultApiKey = "secret_0320c9f4fcc62a281992e3bdb916e4b19ca3625489a42a74"
     
     // MARK: - AdMob Test Unit IDs (Official Google AdMob iOS Test IDs)
     public enum AdMobTestIDs {

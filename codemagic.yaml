@@ -90,7 +90,7 @@ workflows:
     publishing:
       email:
         recipients:
-          - support@dramareel.org
+          - devops@dramareel.app
         notify:
           failure: true
           success: true
