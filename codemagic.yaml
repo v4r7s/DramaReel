@@ -1,4 +1,51 @@
 workflows:
+  ios-build-ipa:
+    name: Dramareel iOS - Build IPA Package (No Apple Account Required)
+    max_build_duration: 30
+    instance_type: mac_mini_m2
+    environment:
+      xcode: 16.0
+      vars:
+        XCODE_PROJECT: "Dramareel.xcodeproj"
+        XCODE_SCHEME: "Dramareel"
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: 'main'
+          include: true
+    scripts:
+      - name: Install Tools & Generate Project
+        script: |
+          brew install xcodegen
+          xcodegen generate
+      - name: Resolve Swift Packages
+        script: |
+          xcodebuild -resolvePackageDependencies -project Dramareel.xcodeproj
+      - name: Build and Archive Dramareel Application
+        script: |
+          xcodebuild archive \
+            -project Dramareel.xcodeproj \
+            -scheme "$XCODE_SCHEME" \
+            -archivePath build/ios/xcarchive/Dramareel.xcarchive \
+            -destination 'generic/platform=iOS' \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGN_STYLE=Manual
+      - name: Package IPA Artifact
+        script: |
+          mkdir -p build/ios/ipa/Payload
+          cp -r build/ios/xcarchive/Dramareel.xcarchive/Products/Applications/Dramareel.app build/ios/ipa/Payload/
+          cd build/ios/ipa
+          zip -r Dramareel.ipa Payload
+          echo "=========================================================="
+          echo "SUCCESS: Dramareel.ipa has been packaged successfully!"
+          echo "You can download it directly from Codemagic build Artifacts."
+          echo "=========================================================="
+    artifacts:
+      - build/ios/ipa/*.ipa
+
   ios-build-test:
     name: Dramareel iOS - Build & Unit Tests
     max_build_duration: 30
@@ -43,51 +90,8 @@ workflows:
     artifacts:
       - /Users/builder/Library/Developer/Xcode/DerivedData/**/Logs/Test/*.xcresult
 
-  ios-build-ipa:
-    name: Dramareel iOS - Build IPA Package (Standalone)
-    max_build_duration: 30
-    instance_type: mac_mini_m2
-    environment:
-      xcode: 16.0
-      vars:
-        XCODE_PROJECT: "Dramareel.xcodeproj"
-        XCODE_SCHEME: "Dramareel"
-    triggering:
-      events:
-        - push
-      branch_patterns:
-        - pattern: 'main'
-          include: true
-    scripts:
-      - name: Install Tools & Generate Project
-        script: |
-          brew install xcodegen
-          xcodegen generate
-      - name: Resolve Swift Packages
-        script: |
-          xcodebuild -resolvePackageDependencies -project Dramareel.xcodeproj
-      - name: Archive Dramareel Application
-        script: |
-          xcodebuild archive \
-            -project Dramareel.xcodeproj \
-            -scheme "$XCODE_SCHEME" \
-            -archivePath build/ios/xcarchive/Dramareel.xcarchive \
-            -destination 'generic/platform=iOS' \
-            CODE_SIGNING_ALLOWED=NO \
-            CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGN_IDENTITY=""
-      - name: Package IPA Artifact
-        script: |
-          mkdir -p build/ios/ipa/Payload
-          cp -r build/ios/xcarchive/Dramareel.xcarchive/Products/Applications/Dramareel.app build/ios/ipa/Payload/
-          cd build/ios/ipa
-          zip -r Dramareel.ipa Payload
-          echo "Dramareel.ipa successfully packaged!"
-    artifacts:
-      - build/ios/ipa/*.ipa
-
   ios-release-testflight:
-    name: Dramareel iOS - Release to TestFlight
+    name: Dramareel iOS - Release to TestFlight (Requires Apple Developer Account)
     max_build_duration: 60
     instance_type: mac_mini_m2
     environment:
@@ -102,10 +106,7 @@ workflows:
     triggering:
       events:
         - tag
-        - push
       branch_patterns:
-        - pattern: 'main'
-          include: true
         - pattern: 'v*'
           include: true
     scripts:
@@ -113,44 +114,27 @@ workflows:
         script: |
           brew install xcodegen
           xcodegen generate
-      - name: Set up code signing settings on Codemagic
+      - name: Check Apple Developer Credentials
         script: |
-          if [ -n "$APP_STORE_CONNECT_PRIVATE_KEY" ] && [ "$APP_STORE_CONNECT_PRIVATE_KEY" != "null" ]; then
-            keychain initialize
-            app-store-connect fetch-signing-files "$BUNDLE_ID" \
-              --type IOS_APP_STORE \
-              --create
-            keychain add-certificates
-            xcode-project use-profiles --project Dramareel.xcodeproj
-          else
-            echo "NOTICE: APP_STORE_CONNECT_PRIVATE_KEY is not configured in Codemagic environment variables."
+          if [ -z "$APP_STORE_CONNECT_PRIVATE_KEY" ] || [ "$APP_STORE_CONNECT_PRIVATE_KEY" = "null" ]; then
+            echo "ERROR: You need an Apple Developer Program account to use TestFlight."
+            echo "Please use the 'ios-build-ipa' workflow instead to generate the IPA without an Apple account."
+            exit 1
           fi
+          keychain initialize
+          app-store-connect fetch-signing-files "$BUNDLE_ID" \
+            --type IOS_APP_STORE \
+            --create
+          keychain add-certificates
+          xcode-project use-profiles --project Dramareel.xcodeproj
       - name: Resolve Swift Packages
         script: |
           xcodebuild -resolvePackageDependencies -project Dramareel.xcodeproj
-      - name: Build IPA
+      - name: Build IPA for App Store
         script: |
-          mkdir -p build/ios/ipa
-          if [ -n "$APP_STORE_CONNECT_PRIVATE_KEY" ] && [ -d "$HOME/Library/MobileDevice/Provisioning Profiles" ] && [ "$(ls -A "$HOME/Library/MobileDevice/Provisioning Profiles" 2>/dev/null)" ]; then
-            xcode-project build-ipa \
-              --project Dramareel.xcodeproj \
-              --scheme "$XCODE_SCHEME"
-          else
-            echo "Building standalone Dramareel IPA..."
-            xcodebuild archive \
-              -project Dramareel.xcodeproj \
-              -scheme "$XCODE_SCHEME" \
-              -archivePath build/ios/xcarchive/Dramareel.xcarchive \
-              -destination 'generic/platform=iOS' \
-              CODE_SIGNING_ALLOWED=NO \
-              CODE_SIGNING_REQUIRED=NO \
-              CODE_SIGN_IDENTITY=""
-            mkdir -p build/ios/ipa/Payload
-            cp -r build/ios/xcarchive/Dramareel.xcarchive/Products/Applications/Dramareel.app build/ios/ipa/Payload/
-            cd build/ios/ipa
-            zip -r Dramareel.ipa Payload
-            echo "Dramareel.ipa packaged successfully!"
-          fi
+          xcode-project build-ipa \
+            --project Dramareel.xcodeproj \
+            --scheme "$XCODE_SCHEME"
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
