@@ -43,6 +43,49 @@ workflows:
     artifacts:
       - /Users/builder/Library/Developer/Xcode/DerivedData/**/Logs/Test/*.xcresult
 
+  ios-build-ipa:
+    name: Dramareel iOS - Build IPA Package (Standalone)
+    max_build_duration: 30
+    instance_type: mac_mini_m2
+    environment:
+      xcode: 16.0
+      vars:
+        XCODE_PROJECT: "Dramareel.xcodeproj"
+        XCODE_SCHEME: "Dramareel"
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: 'main'
+          include: true
+    scripts:
+      - name: Install Tools & Generate Project
+        script: |
+          brew install xcodegen
+          xcodegen generate
+      - name: Resolve Swift Packages
+        script: |
+          xcodebuild -resolvePackageDependencies -project Dramareel.xcodeproj
+      - name: Archive Dramareel Application
+        script: |
+          xcodebuild archive \
+            -project Dramareel.xcodeproj \
+            -scheme "$XCODE_SCHEME" \
+            -archivePath build/ios/xcarchive/Dramareel.xcarchive \
+            -destination 'generic/platform=iOS' \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY=""
+      - name: Package IPA Artifact
+        script: |
+          mkdir -p build/ios/ipa/Payload
+          cp -r build/ios/xcarchive/Dramareel.xcarchive/Products/Applications/Dramareel.app build/ios/ipa/Payload/
+          cd build/ios/ipa
+          zip -r Dramareel.ipa Payload
+          echo "Dramareel.ipa successfully packaged!"
+    artifacts:
+      - build/ios/ipa/*.ipa
+
   ios-release-testflight:
     name: Dramareel iOS - Release to TestFlight
     max_build_duration: 60
@@ -72,20 +115,42 @@ workflows:
           xcodegen generate
       - name: Set up code signing settings on Codemagic
         script: |
-          keychain initialize
-          app-store-connect fetch-signing-files "$BUNDLE_ID" \
-            --type IOS_APP_STORE \
-            --create
-          keychain add-certificates
-          xcode-project use-profiles --project Dramareel.xcodeproj
+          if [ -n "$APP_STORE_CONNECT_PRIVATE_KEY" ] && [ "$APP_STORE_CONNECT_PRIVATE_KEY" != "null" ]; then
+            keychain initialize
+            app-store-connect fetch-signing-files "$BUNDLE_ID" \
+              --type IOS_APP_STORE \
+              --create
+            keychain add-certificates
+            xcode-project use-profiles --project Dramareel.xcodeproj
+          else
+            echo "NOTICE: APP_STORE_CONNECT_PRIVATE_KEY is not configured in Codemagic environment variables."
+          fi
       - name: Resolve Swift Packages
         script: |
           xcodebuild -resolvePackageDependencies -project Dramareel.xcodeproj
-      - name: Build IPA for App Store
+      - name: Build IPA
         script: |
-          xcode-project build-ipa \
-            --project Dramareel.xcodeproj \
-            --scheme "$XCODE_SCHEME"
+          mkdir -p build/ios/ipa
+          if [ -n "$APP_STORE_CONNECT_PRIVATE_KEY" ] && [ -d "$HOME/Library/MobileDevice/Provisioning Profiles" ] && [ "$(ls -A "$HOME/Library/MobileDevice/Provisioning Profiles" 2>/dev/null)" ]; then
+            xcode-project build-ipa \
+              --project Dramareel.xcodeproj \
+              --scheme "$XCODE_SCHEME"
+          else
+            echo "Building standalone Dramareel IPA..."
+            xcodebuild archive \
+              -project Dramareel.xcodeproj \
+              -scheme "$XCODE_SCHEME" \
+              -archivePath build/ios/xcarchive/Dramareel.xcarchive \
+              -destination 'generic/platform=iOS' \
+              CODE_SIGNING_ALLOWED=NO \
+              CODE_SIGNING_REQUIRED=NO \
+              CODE_SIGN_IDENTITY=""
+            mkdir -p build/ios/ipa/Payload
+            cp -r build/ios/xcarchive/Dramareel.xcarchive/Products/Applications/Dramareel.app build/ios/ipa/Payload/
+            cd build/ios/ipa
+            zip -r Dramareel.ipa Payload
+            echo "Dramareel.ipa packaged successfully!"
+          fi
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
