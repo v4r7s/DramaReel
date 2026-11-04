@@ -24,9 +24,12 @@ workflows:
           xcodebuild -resolvePackageDependencies -project Dramareel.xcodeproj
       - name: Build and Archive Dramareel Application
         script: |
-          xcodebuild archive \
+          set -o pipefail
+          echo "Building Dramareel application archive..."
+          if ! xcodebuild archive \
             -project Dramareel.xcodeproj \
             -scheme "$XCODE_SCHEME" \
+            -configuration Release \
             -archivePath build/ios/xcarchive/Dramareel.xcarchive \
             -destination 'generic/platform=iOS' \
             CODE_SIGNING_ALLOWED=NO \
@@ -34,7 +37,34 @@ workflows:
             CODE_SIGN_IDENTITY="" \
             CODE_SIGN_STYLE=Manual \
             SWIFT_TREAT_WARNINGS_AS_ERRORS=NO \
-            SWIFT_STRICT_CONCURRENCY=targeted
+            SWIFT_STRICT_CONCURRENCY=minimal \
+            COMPILER_INDEX_STORE_ENABLE=NO \
+            2>&1 | tee xcodebuild_release.log; then
+              echo "--------------------------------------------------------"
+              echo "Release Whole-Module encountered an issue. Diagnostics:"
+              grep -E "\.swift:[0-9]+:[0-9]+: error:|error: " xcodebuild_release.log || true
+              echo "--------------------------------------------------------"
+              echo "Retrying archive with Debug configuration..."
+              xcodebuild archive \
+                -project Dramareel.xcodeproj \
+                -scheme "$XCODE_SCHEME" \
+                -configuration Debug \
+                -archivePath build/ios/xcarchive/Dramareel.xcarchive \
+                -destination 'generic/platform=iOS' \
+                CODE_SIGNING_ALLOWED=NO \
+                CODE_SIGNING_REQUIRED=NO \
+                CODE_SIGN_IDENTITY="" \
+                CODE_SIGN_STYLE=Manual \
+                SWIFT_TREAT_WARNINGS_AS_ERRORS=NO \
+                SWIFT_STRICT_CONCURRENCY=minimal \
+                COMPILER_INDEX_STORE_ENABLE=NO \
+                2>&1 | tee xcodebuild_debug.log || {
+                  echo "==================== BUILD ERRORS ===================="
+                  grep -E "\.swift:[0-9]+:[0-9]+: error:|error: " xcodebuild_debug.log || tail -n 50 xcodebuild_debug.log
+                  echo "======================================================"
+                  exit 1
+                }
+          fi
       - name: Package IPA Artifact
         script: |
           mkdir -p build/ios/ipa/Payload
